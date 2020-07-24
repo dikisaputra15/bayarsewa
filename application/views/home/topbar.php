@@ -28,9 +28,6 @@
                 </li>
 
              <?php else : ?>
-                <!-- <li class="nav-item mr-4 mt-1">
-                   <a class="nav-link d-inline" href="<?= base_url('chat'); ?>">Chat</a>
-                </li> -->
 
                 <li class="nav-item mr-4 mt-1">
                    <a class="nav-link d-inline" href="<?= base_url('snap/status_transaksi'); ?>">Transaksi</a>
