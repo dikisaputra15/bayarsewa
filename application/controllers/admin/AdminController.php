@@ -6,6 +6,9 @@ class AdminController extends CI_Controller
    public function __construct()
    {
       parent::__construct();
+      if (!$this->session->userdata('email')) {
+         redirect('auth/login');
+      }
       $this->load->model('Model_transaksi');
    }
 
@@ -14,11 +17,11 @@ class AdminController extends CI_Controller
       $data = [
          'title' => 'Dashboard',
          'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
-         'pendapatan' => $this->Model_transaksi->pendapatan(),
-         'transaksi_masuk' => $this->db->get('tb_transaksi')->num_rows(),
-         'transaksi_gagal' => $this->db->get_where('tb_transaksi', ['transaction_status' => 'expire'])->result_array(),
-         'transaksi_berhasil' => $this->db->get_where('tb_transaksi', ['transaction_status' => 'settlement'])->result_array(),
-         'transaksi_pending' => $this->db->get_where('tb_transaksi', ['transaction_status' => 'pending'])->result_array(),
+         // 'pendapatan' => $this->Model_transaksi->pendapatan(),
+         // 'transaksi_masuk' => $this->db->get('tb_transaksi')->num_rows(),
+         // 'transaksi_gagal' => $this->db->get_where('tb_transaksi', ['transaction_status' => 'expire'])->result_array(),
+         // 'transaksi_berhasil' => $this->db->get_where('tb_transaksi', ['transaction_status' => 'settlement'])->result_array(),
+         // 'transaksi_pending' => $this->db->get_where('tb_transaksi', ['transaction_status' => 'pending'])->result_array(),
       ];
       $this->load->view('admin_templates/header', $data);
       $this->load->view('admin_templates/sidebar');

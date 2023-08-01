@@ -9,7 +9,7 @@
           <li class="nav-item ml-4">
              <form action="<?= base_url('home/search') ?>" method="POST">
                 <div class="input-group">
-                   <input type="text" name="keyword" class="form-control" placeholder="Cari barang.." autocomplete="off">
+                   <input type="text" name="keyword" class="form-control" placeholder="Cari barang.." autocomplete="off" required>
                    <div class="input-group-append">
                       <input class="btn btn-outline-secondary" type="submit" value="Cari" name="submit">
                    </div>

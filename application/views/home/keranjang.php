@@ -8,7 +8,9 @@
                <?php if ($this->cart->contents()) : ?>
                   <table class="table table-borderless">
                      <?php
-                     foreach ($this->cart->contents() as $items) : ?>
+                     foreach ($this->cart->contents() as $items) :
+                        echo form_open('home/update_keranjang/' . $items['rowid']);
+                     ?>
                         <tr>
                            <td class="align-middle">
                               <img class="" style="width: 60px;" src="<?= base_url('public/img/crop/') . $items['image'] ?>">
@@ -22,12 +24,9 @@
                            <td class="align-middle">
                               <div class="input-group">
                                  <div class="input-group-prepend">
-                                    <button class="btn btn-outline-secondary" type="button" id="update_quantity_minus">-</button>
+                                    <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-edit fa-1x"></i></button>
                                  </div>
-                                 <input style="width: 0px;" id="qty_barang" type="text" class="text-center form-control" value="<?= $items['qty'] ?>" produkid="<?= $items['rowid']; ?>" readonly>
-                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="update_quantity_plus">+</button>
-                                 </div>
+                                 <input style="width: 50px;" name="qty" type="number" class="text-center form-control" value="<?= $items['qty'] ?>">
                               </div>
                            </td>
                            <td class="align-middle">
@@ -39,7 +38,9 @@
                               <small class="text-muted" style="font-size: 10px;">Sub total</small>
                            </td>
                         </tr>
-                     <?php endforeach; ?>
+                     <?php
+                        echo form_close();
+                     endforeach; ?>
                   </table>
             </div>
          </div>

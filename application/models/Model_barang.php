@@ -6,7 +6,7 @@ class Model_barang extends CI_Model
    public function tampil()
    {
 
-      $query = "SELECT * FROM `tb_barang` LIMIT 6
+      $query = "SELECT * FROM `tb_barang` LIMIT 8
              ";
       return $this->db->query($query)->result_array();
    }

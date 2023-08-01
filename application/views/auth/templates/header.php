@@ -9,7 +9,7 @@
    <meta name="description" content="">
    <meta name="author" content="">
 
-   <title><?= $judul; ?></title>
+   <title><?= $title; ?></title>
 
    <!-- Custom fonts for this template-->
    <link href="<?= base_url('assets/sb-admin2/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

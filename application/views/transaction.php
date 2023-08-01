@@ -14,9 +14,9 @@
 						<p>
 							<label>Action</label><br />
 							<input type="radio" name="action" value="status"> Get Status<br>
-							<input type="radio" name="action" value="approve"> Approve<br>
+							<!-- <input type="radio" name="action" value="approve"> Approve<br>
 							<input type="radio" name="action" value="cancel"> Cancel<br>
-							<input type="radio" name="action" value="expire"> Expire<br>
+							<input type="radio" name="action" value="expire"> Expire<br> -->
 						</p>
 						<button class="btn btn-sm btn-danger submit-button" type="submit">Submit Payment</button>
 					</form>

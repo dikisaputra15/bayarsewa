@@ -32,8 +32,9 @@ class Home extends CI_Controller
       } else {
          $data['keyword'] = null;
       }
+      $data['title'] = 'Cari';
       $data['barang'] = $this->Model_barang->search($data['keyword']);
-      $this->load->view('home/header');
+      $this->load->view('home/header', $data);
       $this->load->view('home/topbar');
       $this->load->view('home/search', $data);
       $this->load->view('home/footer');
@@ -92,56 +93,53 @@ class Home extends CI_Controller
       $this->load->view('home/footer');
    }
 
-   public function update_keranjang()
+   public function update_keranjang($rowid)
    {
-      $id_produk = $this->input->post('id_produk');
-      $value = $this->input->post('value');
-
       $data = [
-         'rowid'   => $id_produk,
-         'qty'     => $value
+         'rowid'   => $rowid,
+         'qty'     => $this->input->post('qty')
       ];
       $this->cart->update($data);
       redirect('home/detail_keranjang');
    }
 
-   public function update_tambah()
-   {
-      $rowid = $this->input->post('produk_id');
-      $cart = $this->cart->contents();
-      foreach ($cart as $cart) {
-         //now match your item whose qty is updated
-         if ($rowid == $cart['rowid']) {
-            $qty = $cart['qty'];
-         }
-      }
+   // public function update_tambah()
+   // {
+   //    $rowid = $this->input->post('produk_id');
+   //    $cart = $this->cart->contents();
+   //    foreach ($cart as $cart) {
+   //       //now match your item whose qty is updated
+   //       if ($rowid == $cart['rowid']) {
+   //          $qty = $cart['qty'];
+   //       }
+   //    }
 
-      $data = array(
-         'rowid' => $rowid,
-         'qty' => $qty + 1
-      );
-      $data = $this->cart->update($data);
-      redirect('home/detail_keranjang');
-   }
+   //    $data = array(
+   //       'rowid' => $rowid,
+   //       'qty' => $qty + 1
+   //    );
+   //    $data = $this->cart->update($data);
+   //    redirect('home/detail_keranjang');
+   // }
 
-   public function update_kurang()
-   {
-      $rowid = $this->input->post('produk_id');
-      $cart = $this->cart->contents();
-      foreach ($cart as $cart) {
-         //now match your item whose qty is updated
-         if ($rowid == $cart['rowid']) {
-            $qty = $cart['qty'];
-         }
-      }
+   // public function update_kurang()
+   // {
+   //    $rowid = $this->input->post('produk_id');
+   //    $cart = $this->cart->contents();
+   //    foreach ($cart as $cart) {
+   //       //now match your item whose qty is updated
+   //       if ($rowid == $cart['rowid']) {
+   //          $qty = $cart['qty'];
+   //       }
+   //    }
 
-      $data = array(
-         'rowid' => $rowid,
-         'qty' => $qty - 1
-      );
-      $data = $this->cart->update($data);
-      redirect('home/detail_keranjang');
-   }
+   //    $data = array(
+   //       'rowid' => $rowid,
+   //       'qty' => $qty - 1
+   //    );
+   //    $data = $this->cart->update($data);
+   //    redirect('home/detail_keranjang');
+   // }
 
    public function setting()
    {

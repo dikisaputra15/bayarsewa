@@ -100,11 +100,74 @@
                      <td>:</td>
                      <td><?= $detail_pelanggan['payment_type'] ?></td>
                   </tr>
-                  <tr>
-                     <td>Bank</td>
-                     <td>:</td>
-                     <td><?= $detail_pelanggan['bank'] ?></td>
-                  </tr>
+
+                  <?php if ($detail_pelanggan['bill_key'] == '-') : ?>
+                     <?php echo ""; ?>
+                  <?php elseif ($detail_pelanggan['bill_key'] == 0) : ?>
+                     <?php echo ""; ?>
+                  <?php else : ?>
+                     <tr>
+                        <td>Bill key</td>
+                        <td>:</td>
+                        <td> <?= $detail_pelanggan['bill_key'] ?> </td>
+                     </tr>
+                  <?php endif; ?>
+
+                  <?php if ($detail_pelanggan['biller_code'] == '-') : ?>
+                     <?php echo ""; ?>
+                  <?php elseif ($detail_pelanggan['biller_code'] == 0) : ?>
+                     <?php echo ""; ?>
+                  <?php else : ?>
+                     <tr>
+                        <td>Biller code</td>
+                        <td>:</td>
+                        <td> <?= $detail_pelanggan['biller_code'] ?> </td>
+                     </tr>
+                  <?php endif; ?>
+
+                  <?php if ($detail_pelanggan['permata_va_number'] == '-') : ?>
+                     <tr>
+                        <td>Bank</td>
+                        <td>:</td>
+                        <td> <?= $detail_pelanggan['bank'] ?> </td>
+                     </tr>
+                  <?php else : ?>
+                     <tr>
+                        <td>Bank</td>
+                        <td>:</td>
+                        <td><?= 'Permata bank'; ?></td>
+                     </tr>
+                  <?php endif; ?>
+
+                  <?php if ($detail_pelanggan['va_number'] == '-') : ?>
+                     <?php echo ""; ?>
+                  <?php else : ?>
+                     <tr>
+                        <td>Va number</td>
+                        <td>:</td>
+                        <td> <?= $detail_pelanggan['va_number'] ?> </td>
+                     </tr>
+                  <?php endif; ?>
+
+                  <?php if ($detail_pelanggan['bca_va_number'] == '-') : ?>
+                     <?php echo ""; ?>
+                  <?php else : ?>
+                     <tr>
+                        <td>BCA va number</td>
+                        <td>:</td>
+                        <td> <?= $detail_pelanggan['bca_va_number'] ?> </td>
+                     </tr>
+                  <?php endif; ?>
+
+                  <?php if ($detail_pelanggan['permata_va_number'] == '-') : ?>
+                     <?php echo ""; ?>
+                  <?php else : ?>
+                     <tr>
+                        <td>Permata va number</td>
+                        <td>:</td>
+                        <td> <?= $detail_pelanggan['permata_va_number'] ?> </td>
+                     </tr>
+                  <?php endif; ?>
                </table>
             </div>
          </div>

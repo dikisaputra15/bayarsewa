@@ -28,10 +28,10 @@
                     <img class="d-block img-fluid" src="<?= base_url('public/img/banner/banner.png') ?>" alt="First slide">
                  </div>
                  <div class="carousel-item">
-                    <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                    <img class="d-block img-fluid" src="<?= base_url('public/img/banner/banner1.png') ?>" alt="Second slide">
                  </div>
                  <div class="carousel-item">
-                    <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                    <img class="d-block img-fluid" src="<?= base_url('public/img/banner/banner2.png') ?>" alt="Third slide">
                  </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
